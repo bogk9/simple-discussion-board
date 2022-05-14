@@ -31,7 +31,7 @@ export const Thread = (props) => {
 
     async function fetchData() {
       const headers = authHeader();
-      let response = await axios("http://localhost:3000/api/get/thread?id=" + id.toString(), {headers});
+      let response = await axios("/api/get/thread?id=" + id.toString(), {headers});
       let threads = await response.data;
       setThread(threads);
       setIsLoading(false);

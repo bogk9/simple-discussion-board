@@ -79,7 +79,7 @@ export const ThreadCreator = () => {
         category: formTags[0]
       };
     
-      axios.post(`http://localhost:3000/api/add/thread`, newPerson, {headers: authHeader()})
+      axios.post(`/api/add/thread`, newPerson, {headers: authHeader()})
       setFormAuthor("");setFormContent("");setFormTopic("");
       dispatch(toggleThreadPrompt(false));
       dispatch(forceUpdate());

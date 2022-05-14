@@ -78,7 +78,7 @@ export const PostCreator = (props) => {
       */
 
 
-      axios.post('http://localhost:3000/api/add/post', newPost, {headers: authHeader()})
+      axios.post('/api/add/post', newPost, {headers: authHeader()})
       console.log("posted: " );
       console.log(newPost);
       setFormAuthor("");setFormContent("");

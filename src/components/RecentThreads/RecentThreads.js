@@ -51,7 +51,7 @@ export const RecentThreads = () => {
 
     useEffect(() => {
       const fetchThreads = async () =>{
-        let loadedThreads = await fetch(`http://localhost:3000/api/get/recentThreads`)
+        let loadedThreads = await fetch(`/api/get/recentThreads`)
         .then(response => response.json())
         .catch(error => {
           //window.alert(error);

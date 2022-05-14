@@ -10,19 +10,12 @@ module.exports = function(app) {
     next();
   });
 
-  app.get("/api/test/all", controller.allAccess);
-
-  // /api/get/thread // 
-
   app.get("/api/get/thread", [authJwt.verifyToken], controller.getThread);
   app.get("/api/get/recentUserThreads", [authJwt.verifyToken], controller.getRecentUserThreads);
   app.get("/api/get/recentThreads", controller.getRecentThreads);
   app.get("/api/get/userProfile/:username", [authJwt.verifyToken], controller.getUserProfile);
   app.post("/api/add/thread", [authJwt.verifyToken], controller.addThread);
   app.post("/api/add/post", [authJwt.verifyToken], controller.addPost);
-
-
-
 
   app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
   app.get(

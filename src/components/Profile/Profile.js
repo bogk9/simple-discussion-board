@@ -33,7 +33,7 @@ export const Profile = () => {
 
         //will get profile
       const fetchProfile = async () =>{
-        let loadedProfile = await fetch("http://localhost:3000/api/get/userProfile/" + username.toString(), {method: 'GET', headers: authHeader()})
+        let loadedProfile = await fetch("/api/get/userProfile/" + username.toString(), {method: 'GET', headers: authHeader()})
         .then(response => response.json())
         .catch(error => {
           window.alert(error);
