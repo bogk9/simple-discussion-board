@@ -2,10 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require('path');
-//require("dotenv").config({ path: "./config.env" });
 
-//const {ATLAS_URI} = require('./config/db.js');
-const {PORT, SECRET} = require('./config/server.js');
+const {SECRET} = require('./config/server.js');
 
 
 const dbo = require("./db/conn");
@@ -30,7 +28,7 @@ app.get('*', (req, res) => {
    res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-app.listen(PORT || 8081, () => {
+app.listen(process.env.PORT || 3000, () => {
     dbo.connectToServer(function (err) {
       if (err) console.error(err);
 	
