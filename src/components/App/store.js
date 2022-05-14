@@ -1,7 +1,6 @@
 import { applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
-import { appbarReducer } from '../AppbarSlice';
 import auth from '../../reducers/auth'
 import logger from 'redux-logger'
 import message from '../../reducers/message'
