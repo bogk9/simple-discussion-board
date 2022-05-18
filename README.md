@@ -14,8 +14,7 @@ Example of JWT-authenticated discussion board app, designed with Material UI.
 ![preview](https://gcdnb.pbrd.co/images/4SQAuXw5v3w6.png?o=1 "simple-discussion-board")
 
 ## Demo
-(please let 10-20s for heroku to wake the app)
-https://discussion-board-bk.herokuapp.com
+https://discussion-board-bk.herokuapp.com (please let 10-20s for heroku to wake the app)
 ## Features
 
 - Server-side JWT token authorization
