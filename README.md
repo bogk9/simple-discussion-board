@@ -11,7 +11,7 @@ Example of JWT-authenticated discussion board app, designed with Material UI.
 
 ## Screenshots
 
-![preview](https://i.postimg.cc/fRmvsJ5f/Zrzut-ekranu-2022-05-18-o-21-13-00.png "simple-discussion-board")
+![preview](https://gcdnb.pbrd.co/images/4SQAuXw5v3w6.png?o=1 "simple-discussion-board")
 
 ## Demo
 
