@@ -1,7 +1,7 @@
 
 # simple-discussion-board
 
-Example of JWT-authenticated discussion board app, designed with Material UI.
+Example of JWT-authenticated discussion board app, designed with React and Material UI.
 
 ## Tech Stack
 
