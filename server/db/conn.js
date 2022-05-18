@@ -1,7 +1,7 @@
 
 const { MongoClient } = require("mongodb");
 const { ATLAS_URI } = require('../config/db.js');
-//const ATLAS_URI = "mongodb+srv://simpleforum1:simpleforum1@cluster0.es53x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
 const client = new MongoClient(ATLAS_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

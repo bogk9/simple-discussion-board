@@ -10,6 +10,7 @@ module.exports = function(app) {
     next();
   });
 
+  // RESTRICTED ROUTES
   app.get("/api/get/thread", [authJwt.verifyToken], controller.getThread);
   app.get("/api/get/recentUserThreads", [authJwt.verifyToken], controller.getRecentUserThreads);
   app.get("/api/get/recentThreads", controller.getRecentThreads);
@@ -17,10 +18,4 @@ module.exports = function(app) {
   app.post("/api/add/thread", [authJwt.verifyToken], controller.addThread);
   app.post("/api/add/post", [authJwt.verifyToken], controller.addPost);
 
-  app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
-  app.get(
-    "/api/test/admin",
-    [authJwt.verifyToken, authJwt.isAdmin],
-    controller.adminBoard
-  );
 };

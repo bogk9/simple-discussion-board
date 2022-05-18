@@ -3,6 +3,7 @@ const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
 const moment = require('moment');
 
+// NOT IN USE
   
   exports.allAccess = (req, res) => {
     //res.status(200).send(component);
@@ -17,6 +18,8 @@ const moment = require('moment');
     res.status(200).send("Moderator Content.");
   };
 
+// /NOT IN USE
+
 
   exports.addPost = (req, res) => {
     let db_connect = dbo.getDb("forum");
@@ -26,7 +29,7 @@ const moment = require('moment');
         "posts":{
           date: req.body.date,
           text: req.body.text,
-          user_id: req.userId, //provided by authJwt, server-side
+          user_id: req.userId, //provided by authJwt
         }
       }
     };
@@ -49,12 +52,11 @@ const moment = require('moment');
       title: req.body.title,
       date: date,
       text: req.body.text,
-      user_id: req.userId, //provided by authJwt, server-side
+      user_id: req.userId, //provided by authJwt
       category: req.body.category,
       posts: []
     };
 
-    console.log("Adding thread with name:" + req.body.title);
     db_connect.collection("threads").insertOne(myobj, function (err, result) {
       if (err) throw err;
       res.json(result);
@@ -69,7 +71,6 @@ const moment = require('moment');
   exports.getThread = (req, res) => {
     let db_connect = dbo.getDb("forum");
     let myquery = { _id: ObjectId(req.query.id)};
-    console.log("Hey, it's user.controller.js. calling db to look for id: " + req.query.id);
 
     db_connect
     .collection("threads")
@@ -141,8 +142,6 @@ const moment = require('moment');
       )
     .toArray(function (err, result) {
       if (err) throw err;
-      console.log("Hey, it's user.controller again! Sending back result: " );
-      console.log(result);
       res.status(200).send(result);
     });
   }
@@ -150,7 +149,6 @@ const moment = require('moment');
   exports.getRecentUserThreads = (req, res) => {
     let db_connect = dbo.getDb("forum");
     let myquery = { _id: ObjectId(req.query.id)};
-    console.log("Hey, it's user.controller.js. calling db to look for recent threads of user: " + req.query.id);
 
     db_connect
     .collection("threads")
@@ -167,8 +165,6 @@ const moment = require('moment');
       )
     .toArray(function (err, result) {
       if (err) throw err;
-      console.log("Hey, it's user.controller again! Sending back result: " );
-      console.log(result);
       res.status(200).send(result);
     });
   }
@@ -176,7 +172,6 @@ const moment = require('moment');
   exports.getTags = (req, res) => {
     let db_connect = dbo.getDb("forum");
     let myquery = { _id: ObjectId(req.query.id)};
-    console.log("Hey, it's user.controller.js. calling db to look for recent tags " + req.query.id);
 
     db_connect
     .collection("threads")
@@ -193,8 +188,6 @@ const moment = require('moment');
       )
     .toArray(function (err, result) {
       if (err) throw err;
-      console.log("Hey, it's user.controller again! Sending back result: " );
-      console.log(result);
       res.status(200).send(result);
     });
   }
@@ -203,7 +196,6 @@ const moment = require('moment');
   exports.getRecentThreads = (req, res) => {
     let db_connect = dbo.getDb("forum");
     let myquery = { _id: ObjectId(req.query.id)};
-    console.log("Hey, it's user.controller.js. calling db to look for recent threads " + req.query.id);
 
     db_connect
     .collection("threads")
@@ -218,7 +210,6 @@ const moment = require('moment');
 
   exports.getUserProfile = (req, res) => {
     let db_connect = dbo.getDb("forum");
-    console.log("Hey, it's user.controller.js. calling db to look for user profile!! " + req.query.id);
     let myquery = { username: req.params.username};
     db_connect
         .collection("users")

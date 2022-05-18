@@ -3,13 +3,11 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require('path');
 
-const {SECRET} = require('./config/server.js');
 const PORT = process.env.PORT || 3000
 const dbo = require("./db/conn");
 const publicPath = path.join(__dirname, '..', 'build');
 
 
-// =================================auth server========================================
 const app = express();
 var corsOptions = {
   origin: "http://localhost:" + PORT.toString()
@@ -36,4 +34,3 @@ app.listen(PORT, () => {
     });
   console.log(`Server is running on port ${PORT}.`);
 });
-// =================================/auth server========================================
