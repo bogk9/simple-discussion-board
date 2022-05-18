@@ -5,7 +5,7 @@ Example of JWT-authenticated discussion board app, designed with Material UI.
 
 ## Tech Stack
 
-**Client:** React, Redux, Material UI
+**Client:** React (with V6 router), Redux, Material UI
 
 **Server:** Node, Express, bcryptjs, jsonwebtoken, mongoDB
 
